@@ -1,8 +1,9 @@
 # 616_Churn_Project
+# Customer Churn Project: Business Value Proposition
 
 ## Project Overview
 
-Our project focuses on customer churn in a telecommunications company. We want to understand which customers are likely to leave, what characteristics are associated with churn, and which customer groups generate the most revenue. By looking at churn risk and revenue together, we can help leadership make more informed decisions about where to focus retention efforts.
+Our project focuses on customer churn in a telecommunications company. We want to identify customers who are likely to leave, understand the characteristics associated with churn, and determine which customer groups generate the most revenue. Looking at churn risk and revenue together will help leadership decide where to focus retention efforts and budget.
 
 ## Customer Segment
 
@@ -10,39 +11,45 @@ This project is for the executive leadership of the telecommunications company. 
 
 ## Business Problem
 
-When customers leave, the company loses revenue and also faces the expense of acquiring replacement customers. Leadership may have difficulty identifying customers who are likely to leave or understanding the factors associated with churn. This makes it harder to decide which customers to prioritize and how to use limited retention resources.
+Leadership may have difficulty identifying customers who are likely to leave and understanding the factors associated with churn. They may also have limited visibility into which customer groups generate the most revenue.
+
+When customers leave, the company loses revenue and faces the expense of acquiring replacement customers. Without a clear understanding of customer risk and value, it can be difficult to decide where to spend the retention budget.
 
 ## Value Proposition
 
-Our churn analysis and predictive model will help telecommunications leaders identify customers likely to leave, understand factors associated with churn, and recognize customer groups that generate higher revenue. These insights can guide more targeted retention strategies and help leadership decide where to allocate resources to preserve revenue and improve profitability.
+Our churn analysis and predictive model will help telecommunications leaders identify customers likely to leave, understand factors associated with churn, and recognize customer groups that generate higher revenue. These insights can guide targeted retention strategies and resource allocation to help preserve revenue and improve profitability.
 
 ## Products and Services
 
-- An analysis of customer characteristics associated with churn, including demographic, account, service, and contract information.
-- A classification model that estimates customer churn risk.
 - Comparisons of churn and revenue across customer groups.
+- A classification model that estimates customer churn risk.
 - A framework for prioritizing retention outreach using estimated churn risk and available revenue information.
-- A presentation of our findings with clear visuals and actionable recommendations.
+- A presentation of findings and actionable recommendations.
+- An analysis of customer characteristics associated with churn.
 
 ## Pain Relievers
 
-The predictive model will help identify customers who are more likely to leave so leadership can prioritize outreach. Our analysis will also look at patterns associated with churn to give leadership a better understanding of relevant customer characteristics.
+Our churn prediction model will estimate which customers are most likely to leave, helping leadership prioritize retention outreach.
 
-Comparing revenue across customer groups will help show the financial impact of losing different groups. Combining this information with estimated churn risk can help leadership decide where retention resources may be most useful.
+We will analyze demographic, account, service, and contract characteristics to identify patterns associated with churn. This will help leadership better understand the factors that may be relevant to retention decisions.
+
+Our customer-segment revenue analysis will identify which groups generate the most revenue and help clarify the financial impact of losing those customers. Combining churn risk and revenue into a scoring framework will help leadership focus the retention budget on high-value accounts at risk of leaving.
 
 ## Gain Creators
 
-We will group customers based on characteristics included in the analysis and compare their service, contract, churn, and revenue patterns. These comparisons can help leadership develop retention recommendations for different customer groups.
+We will segment customers based on their expected value and use a consistent framework that combines churn risk and revenue information.
 
-A documented framework will provide consistent criteria for comparing churn risk and revenue. Our visuals and recommendations will make the findings easier to understand and use.
+Comparing customer groups will help reveal differences in service, contract, and churn patterns. These findings can support more personalized retention recommendations for different groups.
+
+Simple visual dashboards will communicate customer risk and revenue patterns, along with recommendations to help leadership decide where to focus retention efforts.
 
 ## Expected Gains
 
-- Identify customers and customer groups at risk of leaving.
-- Support more personalized retention strategies.
-- Make more informed decisions about allocating retention resources.
+- Identify and prioritize the most valuable customers.
+- Develop more personalized retention strategies for different customer groups.
+- Make more informed, faster decisions about where to spend the retention budget.
 - Identify opportunities to preserve customer revenue and improve profitability.
 
 ## Overall Goal
 
-Our goal is to help leadership better understand customer churn and use that information to guide retention decisions. The analysis will support recommendations, while the results of any retention strategies would need to be evaluated after implementation.
+Our goal is to help leadership use customer churn risk and revenue information to make better retention decisions. By identifying valuable customers who are at risk of leaving, we can provide recommendations for where to focus outreach and retention resources.
