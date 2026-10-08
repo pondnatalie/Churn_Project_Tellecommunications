@@ -1,5 +1,4 @@
 # 616_Churn_Project
-# Customer Churn Project: Business Value Proposition
 
 ## Project Overview
 
