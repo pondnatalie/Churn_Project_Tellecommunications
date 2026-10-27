@@ -1,121 +1,40 @@
 # Customer Churn Analysis
 
-**Authors:** Ava Cannatelli, Natalie Pond, Sarah Sizemore
+**Authors:** Ava Cannatelli, Natalie Pond, Sarah Sizemore  
 **Course:** ISA 616, Miami University (Fall 2026)
 
 ## Purpose
 
-This project analyzes customer churn for a telecommunications company using the class-provided IBM Telco-style dataset (7,043 customers, response variable `Churn`). We clean and preprocess the data, then answer six research questions: how tenure and satisfaction relate to churn, whether tech support reduces churn, which customer segments are highest risk, whether contract and payment method effects hold up after adjusting for other factors, how accurately we can predict churn, and how many churners the company would catch by contacting only its riskiest customers. The notebook is written for a fellow analyst or practitioner who wants to reproduce or extend the analysis.
+A telecom company is losing about 26.5% of its customers (1,869 of 7,043 in our data), so understanding why customers leave and identifying those most likely to leave is important. For this project, we cleaned and analyzed customer data, explored six research questions, and built simple models to predict churn. Our goal was to figure out which factors are most closely related to customers leaving and how the company could use this information to focus its retention efforts on those most at risk. We also looked at how many customers who actually churned the company could reach by contacting only the 20% with the highest predicted risk.
 
-## Folder Structure
+## Files and Folders
 
-```
-616_Churn_Project/
-├── data/
-│   ├── Churn_class_project.csv     # original class dataset (input)
-│   └── (data dictionary PDF)
-├── outputs/
-│   └── Churn_cleaned.csv           # cleaned dataset written by the notebook
-├── Churn_Project.ipynb             # analysis notebook (run this)
-├── Churn_Project.html              # knitted HTML version of the notebook
-├── BVP (1).png                     # Business Value Proposition image shown in the notebook
-├── requirements.txt                # pinned Python package versions
-├── .gitignore
-└── README.md
-```
+- `Churn_Project.ipynb` — the final notebook. It contains the project statement, research questions, data cleaning, all six research-question analyses with takeaways, the summary of findings, limitations, and a version history of the software used.
+- `Churn_Project.html` — the knitted (exported) HTML version of the notebook. Open this to read the full workflow with all outputs and charts.
+- `BVP (1).png` — the Business Value Proposition image shown at the top of the notebook and HTML. Keep it in the same folder as both files.
+- `requirements.txt` — the package versions used (only needed if a package is missing; see below).
+- `README.md` — this file.
+- `.gitignore` — files excluded from version control.
+- `data/` — input data:
+	- `Churn_class_project.csv` — the original class-provided customer dataset read by the notebook.
+	- `IBM_Telco_Churn_Data_Dictionary.pdf` — the data dictionary describing each field.
+- `outputs/` — files the notebook writes:
+	- `Churn_cleaned.csv` — the cleaned dataset created by the cleaning section.
 
-`data/` contains `Churn_class_project.csv`, the raw dataset the notebook reads. The notebook uses relative paths, so run it from the project folder.
+The notebook uses project-relative paths, so run it with this folder as the working directory.
 
-## Setting Up the Environment
+## Running the Project
 
-The notebook was produced with Python 3.13 (Anaconda). The exact software versions are printed in the "Version History & Computing Environment" section at the top of the notebook.
+The notebook runs on a standard Anaconda (or Jupyter) installation with Python 3.13; it uses only pandas, numpy, matplotlib, seaborn, scipy, scikit-learn, and statsmodels, which come with Anaconda. No other software is needed.
 
-With conda:
+1. Open `Churn_Project.ipynb` from this folder in VS Code or Jupyter.
+2. Choose **Restart & Run All**. The cells run in order from top to bottom; no other files need to be run first.
+3. Confirm the notebook finishes without errors and writes `outputs/Churn_cleaned.csv`.
 
-```bash
-conda create -n churn python=3.13
-conda activate churn
-pip install -r requirements.txt
-```
+All random processes use a fixed seed (616) so the results are reproducible. The **Version History & Computing Environment** table at the top of the notebook lists the exact versions used.
 
-Or with a virtual environment:
+If a package is missing, install the versions we used with `pip install -r requirements.txt`.
 
-```bash
-python -m venv .venv
-.venv\Scripts\activate        # Windows
-source .venv/bin/activate     # macOS/Linux
-pip install -r requirements.txt
-```
+## GitHub
 
-## Running the Notebook
-
-From the project folder, open the notebook with `jupyter lab` or `jupyter notebook` (or VS Code) and choose **Restart & Run All**. To run it from the command line instead:
-
-```bash
-jupyter nbconvert --to notebook --execute --inplace Churn_Project.ipynb
-```
-
-Running the notebook rewrites `outputs/Churn_cleaned.csv`. All random steps use fixed seeds (`random_state=616` for the split and models, `random_state=42` for the imputer), so results are reproducible.
-
-## Exporting the HTML
-
-```bash
-jupyter nbconvert --to html --embed-images Churn_Project.ipynb
-```
-
-`--embed-images` stores the Business Value Proposition image inside the HTML file, so it displays without the PNG alongside it.
-
-## Business Value Proposition
-
-### Project Overview
-
-Our project focuses on customer churn in a telecommunications company. We want to identify customers who are likely to leave, understand the characteristics associated with churn, and determine which customer groups generate the most revenue. Looking at churn risk and revenue together will help leadership decide where to focus retention efforts and budget.
-
-### Customer Segment
-
-This project is for the executive leadership of the telecommunications company. Their main goals are to develop effective customer retention strategies, protect customer revenue, and support profitability.
-
-### Business Problem
-
-Leadership may have difficulty identifying customers who are likely to leave and understanding the factors associated with churn. They may also have limited visibility into which customer groups generate the most revenue.
-
-When customers leave, the company loses revenue and faces the expense of acquiring replacement customers. Without a clear understanding of customer risk and value, it can be difficult to decide where to spend the retention budget.
-
-### Value Proposition
-
-Our churn analysis and predictive model will help telecommunications leaders identify customers likely to leave, understand factors associated with churn, and recognize customer groups that generate higher revenue. These insights can guide targeted retention strategies and resource allocation to help preserve revenue and improve profitability.
-
-### Products and Services
-
-- Comparisons of churn and revenue across customer groups.
-- A classification model that estimates customer churn risk.
-- A framework for prioritizing retention outreach using estimated churn risk and available revenue information.
-- A presentation of findings and actionable recommendations.
-- An analysis of customer characteristics associated with churn.
-
-### Pain Relievers
-
-Our churn prediction model will estimate which customers are most likely to leave, helping leadership prioritize retention outreach.
-
-We will analyze demographic, account, service, and contract characteristics to identify patterns associated with churn. This will help leadership better understand the factors that may be relevant to retention decisions.
-
-Our customer-segment revenue analysis will identify which groups generate the most revenue and help clarify the financial impact of losing those customers. Combining churn risk and revenue into a scoring framework will help leadership focus the retention budget on high-value accounts at risk of leaving.
-
-### Gain Creators
-
-We will segment customers based on their expected value and use a consistent framework that combines churn risk and revenue information.
-
-Comparing customer groups will help reveal differences in service, contract, and churn patterns. These findings can support more personalized retention recommendations for different groups.
-
-Simple visual dashboards will communicate customer risk and revenue patterns, along with recommendations to help leadership decide where to focus retention efforts.
-
-### Expected Gains
-
-- Identify and prioritize the most valuable customers.
-- Develop more personalized retention strategies for different customer groups.
-- Make more informed, faster decisions about where to spend the retention budget.
-- Identify opportunities to preserve customer revenue and improve profitability.
-
-### Overall Goal
-
-Our goal is to help leadership use customer churn risk and revenue information to make better retention decisions. By identifying valuable customers who are at risk of leaving, we can provide recommendations for where to focus outreach and retention resources.
+https://github.com/pondnatalie/616_Churn_Project
